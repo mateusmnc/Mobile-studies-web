@@ -1,0 +1,9 @@
+<div>
+  <label>Talvez você conheça</label>
+  <ul>
+    <li *ngFor="let maybeYouKnowUser of maybeYouKnowList">
+      <p>{{maybeYouKnowUser.username}}</p>
+      <button (click)="addFriend(maybeYouKnowUser)">Adicionar aos amigos</button>
+    </li>
+  </ul>
+</div>

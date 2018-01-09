@@ -1,0 +1,9 @@
+<div>
+  <label>Amigos</label>
+  <ul>
+    <li *ngFor="let friend of friendList">
+      <p>{{friend.username}}</p>
+      <button (click)="unfriend(friend)">Desfazer amizade</button>
+    </li>
+  </ul>
+</div>

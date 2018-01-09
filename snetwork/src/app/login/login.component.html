@@ -1,0 +1,10 @@
+<div>
+  <form #user>
+    
+    <input #user.username id="username" type="text" placeholder="Usuário"/>
+    <input #user.pwd id="pwd" type="password" placeholder="Senha"/>
+    <button type="Submit" (click)="login(user)">Login</button>
+    
+    <a routerLink="/signup">Cadastre-se</a>
+  </form>   
+</div>

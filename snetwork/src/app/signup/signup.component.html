@@ -1,0 +1,32 @@
+<div>
+  <form #newuser>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input #newuser.username id="username" type="text" placeholder="Usuário" required/>
+    </div>
+
+    <div class="form-group">
+      <label for="username">E-mail</label>
+      <input #newuser.email id="email" type="email" placeholder="myemail@example.com" required/>
+    </div>
+
+    <div class="form-group">
+      <label for="pwd">Senha</label>
+      <input #newuser.pwd id="pwd" type="password" required/>
+    </div>    
+    
+    <div class="form-group">
+        <label for="pwdCheck">Confirme sua senha</label>
+        <input #newuser.pwdCheck id="pwdCheck" type="password" (focusout)="isPwdMatching(newuser)" required/>
+        <div *ngIf="newuser.displayPwdDoesNotMatch">
+          <p>As senhas são diferentes, por favor corrija.</p>
+        </div>
+    </div>    
+    <div class="form-group">
+      <button type="Submit" (click)="signupBtClick(newuser)" >Salvar</button>
+      <div *ngIf="newuser.displayMissingFieldMsg">
+        <p>Por favor preencha todos os campos.</p>
+      </div>
+    </div>
+  </form>   
+</div>

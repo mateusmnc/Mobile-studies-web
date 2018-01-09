@@ -1,0 +1,39 @@
+<div>
+  <div id="repoDeImagens">
+    <label for="selectPic">Selecione a imagem a carregar</label>
+    <select #pic id="selectPic">
+      <option value="/assets/images/praia.jpg">Praia</option>
+      <option value="/assets/images/portoalegre.jpg">Porto Alegre</option>
+      <option value="/assets/images/parque.jpg">Parque</option>
+      <option value="/assets/images/cachorro.jpg">Cachorro</option>
+    </select>
+    <hr>
+  </div>
+
+  <app-my-friends></app-my-friends>
+  <app-maybe-you-know></app-maybe-you-know>
+  <form #newpost>
+    <label>No que você está pensando?</label>
+    <textarea #newpost.text id="text" rows="3" cols="70" style="overflow: hidden"></textarea>
+    <input #newpost.location id="location" type="text"/>
+    <img #newpost.image id="image" [src]="">
+    <button type="file" (click)="fileChanged(pic, newpost.image)">carregar foto</button>
+    <label for="privatePost">Post privado</label><input #newpost.privatePost id="privatePost" type="checkbox"/> 
+    <button type="submit" (click)="post(newpost)">publicar</button>
+  </form>
+
+  <div id="feed">
+    <ul>
+      <li *ngFor="let post of feedPosts">
+        <p>id: {{ post.postID }}</p>
+        <p>user: {{ post.userID }}</p>
+        <p>text: {{ post.text }}</p>
+        <img *ngIf="post.imagePath" src="{{post.imagePath}}"/>
+        <div *ngIf="!post.privatePost">
+          <button (click)="share(post)">Compartilhar</button>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</div>
