@@ -14,7 +14,6 @@ import { Router } from '@angular/router';
 })
 
 export class HomeComponent implements OnInit {
-  // User recent posts plus my friends posts
   feedPosts: Post[];
   currentUser: User;
 

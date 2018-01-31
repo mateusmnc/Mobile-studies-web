@@ -1,0 +1,21 @@
+{
+  "name": "tjserver",
+  "version": "0.0.8",
+  "description": "server for troca jogo app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "troca",
+    "jogo",
+    "default",
+    "express",
+    "server"
+  ],
+  "author": "Mateus Manica",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
